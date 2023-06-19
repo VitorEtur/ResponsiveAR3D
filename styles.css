@@ -15,10 +15,21 @@ a:hover {
     opacity: 0.7;
 }
 
+.l1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 .logo {
-    font-size: 24px;
-    text-transform: uppercase;
+    font-size: 20px;
+    /* text-transform: uppercase; */
     letter-spacing: 4px;
+}
+
+.logo-image {
+    max-width: 4.4rem;
+    border-radius: 100%;
+    height: auto;
 }
 
 nav {
@@ -110,6 +121,18 @@ main {
   }
 
 @media (max-width: 780px) {
+
+    .logo {
+        font-size: 20px;
+        /* text-transform: uppercase; */
+        letter-spacing: 4px;
+    }
+    
+    .logo-image {
+        max-width: 4.4rem;
+        border-radius: 100%;
+        height: auto;
+    }
 
     .carousel {
         position: relative;
