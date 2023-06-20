@@ -15,22 +15,12 @@ a:hover {
     opacity: 0.7;
 }
 
-.l1 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
 .logo {
     font-size: 20px;
-    /* text-transform: uppercase; */
+    text-transform: uppercase;
     letter-spacing: 4px;
 }
 
-.logo-image {
-    max-width: 4.4rem;
-    border-radius: 100%;
-    height: auto;
-}
 
 nav {
     display: flex;
@@ -74,12 +64,15 @@ main {
 }
 
 .carousel {
+  
+    display: none;
     position: relative;
     width: 100%;
     max-width: 100%; 
     height: auto;
     margin: 0 auto;
     overflow: hidden;
+    visibility: hidden;
   }
   
   .carousel-slide {
@@ -93,7 +86,6 @@ main {
   .carousel-slide img {
     width: 100%;
     height: auto;
-    visibility: hidden;
   }
   
   .carousel-navigation {
@@ -114,13 +106,58 @@ main {
     border-radius: 50%;
     margin: 5px;
     cursor: pointer;
+    visibility: hidden;
   }
   
   .carousel-navigation .dot.active {
     background-color: #555;
+  }  
+
+  .info {
+    visibility: hidden;
   }
 
+  .banner {
+    display: flex;
+    width: auto;
+    height: auto;
+    /* position: relative; */
+    visibility: visible;
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+
+
+
+
 @media (max-width: 780px) {
+
+  .banner {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  .info {
+    position: absolute;
+    bottom: 73%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    justify-content: left;
+    align-items: left;
+    visibility: visible;
+    z-index: 1;
+  }
+  .carousel .carousel-slide h2 {
+    color: #fff;
+    background: #0000003f;
+  }
+
+  .carousel .carousel-slide p {
+    background: #00ccff62;
+  }
 
     .logo {
         font-size: 20px;
@@ -141,6 +178,7 @@ main {
         height: auto;
         margin: 0 auto;
         overflow: hidden;
+        display: inline;
       }
       
       .carousel-slide {
@@ -159,7 +197,7 @@ main {
       
       .carousel-navigation {
         position: absolute;
-        bottom: 10px;
+        bottom: 2rem;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
@@ -171,10 +209,11 @@ main {
       .carousel-navigation .dot {
         width: 10px;
         height: 10px;
-        background-color: #bbb;
+        background-color: #00ccff69;
         border-radius: 50%;
         margin: 5px;
         cursor: pointer;
+        visibility: visible;
       }
       
       .carousel-navigation .dot.active {
@@ -234,3 +273,92 @@ main {
     transform: rotate(45deg) translate(-5px, -7px);
 }
 
+
+
+.carousel2 {
+  display: none;
+}
+
+@media (min-width: 780px) {
+  .carousel2 {
+    display: flex;
+    margin-top: 10px;
+    margin: 0;
+    width: 100%;
+    height: 85%;
+    overflow: hidden;
+    position: relative;
+    /* background-color: #ffffff; */
+    background-image: url("/Images/texture/texture.png");
+    background-size: 50%;
+    background-repeat: repeat;
+    background-position: center;
+  }
+
+  .carousel2 .carousel2-slide {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  }
+
+  .carousel2 .carousel2-slide.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+  }
+
+  .carousel2 .carousel2-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .carousel2-navigation {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .carousel2-arrow {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3rem;
+    color: #fff;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px;
+    text-transform: uppercase;
+    border-radius: 10px;
+  }
+
+  .acolor {
+    color: #67a7af8e;
+  }
+  
+  .carousel2-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .linha {
+    display: flex;
+    height: 0.2rem;
+    margin-top: 0;
+    background: #fff;
+  }
+  
+}
+
+@media (min-width: 1700px) {
+  
+}
