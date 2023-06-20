@@ -3,6 +3,8 @@ const dots = document.querySelectorAll('.dot');
 
 let currentSlide = 0;
 let isTransitioning = false;
+let touchStartX = 0;
+let touchEndX = 0;
 
 function showSlide(index) {
   if (isTransitioning) return;
@@ -44,3 +46,27 @@ dots.forEach((dot, index) => {
 
 showSlide(currentSlide);
 startAutoplay();
+
+const carousel = document.querySelector('.carousel');
+
+carousel.addEventListener('touchstart', (event) => {
+  touchStartX = event.touches[0].clientX;
+});
+
+carousel.addEventListener('touchmove', (event) => {
+  touchEndX = event.touches[0].clientX;
+});
+
+carousel.addEventListener('touchend', () => {
+  const touchDiff = touchEndX - touchStartX;
+  if (touchDiff > 0) {
+    const nextSlideIndex = currentSlide - 1;
+    if (nextSlideIndex < 0) {
+      showSlide(slides.length - 1);
+    } else {
+      showSlide(nextSlideIndex);
+    }
+  } else if (touchDiff < 0) {
+    nextSlide();
+  }
+});

@@ -21,10 +21,10 @@ a:hover {
     letter-spacing: 4px;
 }
 
-
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 1rem;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
     font-style: italic;
@@ -38,7 +38,8 @@ main {
     background-size: cover;
     height: 92vh;
     color: #fff;
-
+    margin-bottom: -13vh;
+    overflow-y: hidden;
 }
 .nav-list {
     list-style: none;
@@ -133,6 +134,10 @@ main {
 
 @media (max-width: 780px) {
 
+  main {
+    margin-bottom: 0.9vh;
+  }
+
   .banner {
     visibility: hidden;
     position: absolute;
@@ -152,11 +157,11 @@ main {
   }
   .carousel .carousel-slide h2 {
     color: #fff;
-    background: #0000003f;
+    /* background: #0000003f; */
   }
 
   .carousel .carousel-slide p {
-    background: #00ccff62;
+    /* background: #00ccff62; */
   }
 
     .logo {
@@ -229,7 +234,7 @@ main {
         position: absolute;
         top: 8vh;
         right: 0;
-        width: 50vw;
+        width: 100vw;
         height: 92vh;
         align-items: center;
         background: #333333;
@@ -280,7 +285,9 @@ main {
 }
 
 @media (min-width: 780px) {
+
   .carousel2 {
+    overflow-y: hidden;
     display: flex;
     margin-top: 10px;
     margin: 0;
@@ -289,7 +296,7 @@ main {
     overflow: hidden;
     position: relative;
     /* background-color: #ffffff; */
-    background-image: url("/Images/texture/texture.png");
+    background-image: url(./Images/texture/texture.png);
     background-size: 50%;
     background-repeat: repeat;
     background-position: center;
@@ -304,12 +311,15 @@ main {
     height: 100%;
     align-items: center;
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
   }
 
   .carousel2 .carousel2-slide.active {
     display: flex;
     align-items: center;
     justify-content: center;    
+    opacity: 1;
   }
 
   .carousel2 .carousel2-slide img {
@@ -361,4 +371,12 @@ main {
 
 @media (min-width: 1700px) {
   
+}
+
+.about-style {
+  overflow-y: hidden;
+  width: 100%;
+  background-color: #b30e52;
+  height: 500px;
+  display: flex;
 }
